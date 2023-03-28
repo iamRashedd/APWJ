@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+
+<web-app>
+
+    <display-name>RiceMill</display-name>
+    <description>Advanced Java Project</description>
+
+    <filter>
+        <filter-name>AuthorizationFilter</filter-name>
+        <filter-class>ricemill.filter.AuthorizationFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>RoleFilter</filter-name>
+        <filter-class>ricemill.filter.RoleFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthorizationFilter</filter-name>
+        <url-pattern>/app/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>RoleFilter</filter-name>
+        <url-pattern>/app/client/register</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>MainServlet</servlet-name>
+        <servlet-class>ricemill.MainServlet</servlet-class>
+    </servlet>
+
+
+    <!--                ****************   Servlet  ************                 -->
+
+
+    <!--All User Servlet-->
+
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>ricemill.controller.UserLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <servlet-class>ricemill.controller.UserRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserUpdateServlet</servlet-name>
+        <servlet-class>ricemill.controller.UserUpdateServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserHomeServlet</servlet-name>
+        <servlet-class>ricemill.controller.UserHomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserChangePasswordServlet</servlet-name>
+        <servlet-class>ricemill.controller.UserChangePasswordServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserLogoutServlet</servlet-name>
+        <servlet-class>ricemill.controller.UserLogoutServlet</servlet-class>
+    </servlet>
+
+    <!--All Product Servlet-->
+
+    <servlet>
+        <servlet-name>ProductCreateServlet</servlet-name>
+        <servlet-class>ricemill.controller.ProductCreateServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductShowServlet</servlet-name>
+        <servlet-class>ricemill.controller.ProductShowServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductUpdateServlet</servlet-name>
+        <servlet-class>ricemill.controller.ProductUpdateServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <servlet-class>ricemill.controller.ProductDeleteServlet</servlet-class>
+    </servlet>
+
+    <!--All Client Servlet-->
+
+    <servlet>
+        <servlet-name>ClientRegistrationServlet</servlet-name>
+        <servlet-class>ricemill.controller.ClientRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ClientShowServlet</servlet-name>
+        <servlet-class>ricemill.controller.ClientShowServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ClientUpdateServlet</servlet-name>
+        <servlet-class>ricemill.controller.ClientUpdateServlet</servlet-class>
+    </servlet>
+
+
+    <!--All Inventory Servlet-->
+    <servlet>
+        <servlet-name>InventoryShowServlet</servlet-name>
+        <servlet-class>ricemill.controller.InventoryShowServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InventoryUpdateServlet</servlet-name>
+        <servlet-class>ricemill.controller.InventoryUpdateServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InventoryDeleteServlet</servlet-name>
+        <servlet-class>ricemill.controller.InventoryDeleteServlet</servlet-class>
+    </servlet>
+
+
+    <!--                ****************   MAPPING  ************                 -->
+
+
+    <!--All User Servlet Mapping-->
+
+    <servlet-mapping>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserHomeServlet</servlet-name>
+        <url-pattern>/app/user/home</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/user/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <url-pattern>/user/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserUpdateServlet</servlet-name>
+        <url-pattern>/app/user/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserChangePasswordServlet</servlet-name>
+        <url-pattern>/app/user/changepass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserLogoutServlet</servlet-name>
+        <url-pattern>/app/user/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <!--All Product Servlet Mapping-->
+
+    <servlet-mapping>
+        <servlet-name>ProductCreateServlet</servlet-name>
+        <url-pattern>/app/product/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductShowServlet</servlet-name>
+        <url-pattern>/app/product/show</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductUpdateServlet</servlet-name>
+        <url-pattern>/app/product/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <url-pattern>/app/product/delete</url-pattern>
+    </servlet-mapping>
+
+    <!--All Client Servlet Mapping-->
+
+    <servlet-mapping>
+        <servlet-name>ClientRegistrationServlet</servlet-name>
+        <url-pattern>/app/client/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClientShowServlet</servlet-name>
+        <url-pattern>/app/client/show</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClientUpdateServlet</servlet-name>
+        <url-pattern>/app/client/update</url-pattern>
+    </servlet-mapping>
+
+    <!--All Inventory Servlet Mapping-->
+
+    <servlet-mapping>
+        <servlet-name>InventoryShowServlet</servlet-name>
+        <url-pattern>/app/inventory/show</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InventoryUpdateServlet</servlet-name>
+        <url-pattern>/app/inventory/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InventoryDeleteServlet</servlet-name>
+        <url-pattern>/app/inventory/delete</url-pattern>
+    </servlet-mapping>
+
+
+
+
+</web-app>
